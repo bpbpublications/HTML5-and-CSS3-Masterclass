@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Color Transition</title>
+    <style>
+      #box            { position   : absolute;
+                        border     : 5px solid red;
+                        transition : background 1s ease-in-out;
+                        top        : 50px;
+                        left       : 50px;
+                        width      : 100px;
+                        height     : 100px;
+                        background : orange; }
+      #b:hover ~ #box { background : blue;   }
+      #g:hover ~ #box { background : grey;   }
+      #c:hover ~ #box { background : cyan;   }
+    </style>
+  </head>
+  <body>
+    <button id='b'>Blue</button>
+    <button id='g'>Grey</button>
+    <button id='c'>Cyan</button>
+    <div id='box'></div>
+  </body>
+</html>

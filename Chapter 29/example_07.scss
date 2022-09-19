@@ -1,0 +1,10 @@
+@mixin fullres($w: 100%, $h: 100%) {
+  width  : $w;
+  height : $h;
+}
+body {
+  @include fullres(960px);
+}
+p {
+  @include fullres;
+}

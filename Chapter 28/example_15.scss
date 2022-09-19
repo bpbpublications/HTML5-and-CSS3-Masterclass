@@ -1,0 +1,8 @@
+$heading-size : 24pt;
+
+@while $heading-size >= 8pt {
+  h#{$i} {
+    font-size     : $heading-size;
+    $heading-size : $heading-size - 4pt;
+  }
+}

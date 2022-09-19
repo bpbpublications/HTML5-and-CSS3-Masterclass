@@ -1,0 +1,19 @@
+.messagebox, .loggedin, .notloggedin, .badlogin {  
+  border        : 2px dashed #000;
+  border-radius : 10px;
+  background    : #222;
+  padding       : 10px;
+  color         : #ddd;
+}  
+.loggedin {  
+  background    : darkgreen;
+  color         : #dfd;
+}  
+.notloggedin {  
+  background    : dimgrey;
+  color         : #dad;
+}  
+.badlogin {  
+  background    : darkred;
+  color         : #fdd;
+}  

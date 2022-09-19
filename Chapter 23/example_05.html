@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Skew</title>
+    <style>
+      #box            { position   : absolute;
+                        border     : 5px solid red;
+                        transition : all 1s ease-in-out;
+                        top        : 50px;
+                        left       : 50px;
+                        width      : 100px;
+                        height     : 100px;
+                        background : orange;                }
+      #x:hover ~ #box { transform  : skewX( 30deg        ); }
+      #y:hover ~ #box { transform  : skewY(-30deg        ); }
+      #b:hover ~ #box { transform  : skew(  30deg, -30deg); }
+    </style>
+  </head>
+  <body>
+    <button id='x'>SkewX 30 </button>
+    <button id='y'>SkewY -30</button>
+    <button id='b'>Skew Both</button>
+    <div id='box'></div>
+  </body>
+</html>

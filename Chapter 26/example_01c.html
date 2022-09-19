@@ -1,0 +1,220 @@
+<!DOCTYPE html> <!-- Extended HTML, CSS and Whitespace (220 lines) -->
+<html>
+  <head>
+    <title>CSS Grid Playground</title>
+    <style>
+      body {
+        background      : #def;
+      }  
+      input {
+        width           : 33px;
+        position        : relative;
+        top             : -2px;
+        margin          : 0 0 5px;
+        font            : 6pt monospace;
+      }
+      .label {
+        width           : 110px;
+        text-align      : right;
+        float           : left;
+      }
+      .link {
+        color           : blue;
+        text-decoration : underline;
+        cursor          : pointer;
+      }
+      #outer {
+        display         : grid;
+        border          : 1px solid black;
+        border-radius   : 5px;
+        background      : linear-gradient(cyan,deepskyblue);
+        padding         : 5px;
+        box-sizing      : border-box;
+        width           : 100%;
+        height          : 350px;
+        resize          : both;
+        overflow        : hidden;
+      }
+      .box {
+        display         : flex;
+        background      : linear-gradient(yellow,red);
+        align-items     : center;
+        justify-content : center;
+        width           : 100%;
+        height          : 100%;
+        border          : 1px solid black;
+        border-radius   : 5px;
+        font            : bold 20pt Arial;
+        resize          : both;
+        overflow        : auto;
+        color           : white;
+      }
+    </style>
+  </head>
+  <body>
+    <output id='output'>
+      <div class="label">grid-auto-flow :&nbsp;</div>
+      <span class="link" id="grid-auto-flowrow"          onclick="set(0,0)">row</span>
+      <span class="link" id="grid-auto-flowcolumn"       onclick="set(0,1)">column</span>
+      <span class="link" id="grid-auto-flowdense"        onclick="set(0,2)">dense</span>
+      <span class="link" id="grid-auto-flowrow dense"    onclick="set(0,3)">row dense</span>
+      <span class="link" id="grid-auto-flowcolumn dense" onclick="set(0,4)">column dense</span><br>
+      <div class="label">justify-content :&nbsp;</div>
+      <span class="link" id="justify-contentnormal"        onclick="set(1,0)">normal</span>
+      <span class="link" id="justify-contentstart"         onclick="set(1,1)">start</span>
+      <span class="link" id="justify-contentend"           onclick="set(1,2)">end</span>
+      <span class="link" id="justify-contentcenter"        onclick="set(1,3)">center</span>
+      <span class="link" id="justify-contentleft"          onclick="set(1,4)">left</span>
+      <span class="link" id="justify-contentright"         onclick="set(1,5)">right</span>
+      <span class="link" id="justify-contentspace-between" onclick="set(1,6)">space-between</span>
+      <span class="link" id="justify-contentspace-around"  onclick="set(1,7)">space-around</span>
+      <span class="link" id="justify-contentspace-evenly"  onclick="set(1,8)">space-evenly</span><br>
+      <div class="label">align-items :&nbsp;</div>
+      <span class="link" id="align-itemsnormal"     onclick="set(2,0)">normal</span>
+      <span class="link" id="align-itemsstart"      onclick="set(2,1)">start</span>
+      <span class="link" id="align-itemsend"        onclick="set(2,2)">end</span>
+      <span class="link" id="align-itemscenter"     onclick="set(2,3)">center</span>
+      <span class="link" id="align-itemsstretch"    onclick="set(2,4)">stretch</span>
+      <span class="link" id="align-itemsbaseline"   onclick="set(2,5)">baseline</span>
+      <span class="link" id="align-itemsself-start" onclick="set(2,6)">self-start</span>
+      <span class="link" id="align-itemsself-end"   onclick="set(2,7)">self-end</span><br>
+      <div class="label">align-content :&nbsp;</div>
+      <span class="link" id="align-contentnormal"        onclick="set(3,0)">normal</span>
+      <span class="link" id="align-contentstart"         onclick="set(3,1)">start</span>
+      <span class="link" id="align-contentend"           onclick="set(3,2)">end</span>
+      <span class="link" id="align-contentcenter"        onclick="set(3,3)">center</span>
+      <span class="link" id="align-contentstretch"       onclick="set(3,4)">stretch</span>
+      <span class="link" id="align-contentbaseline"      onclick="set(3,5)">baseline</span>
+      <span class="link" id="align-contentspace-between" onclick="set(3,6)">space-between</span>
+      <span class="link" id="align-contentspace-around"  onclick="set(3,7)">space-around</span>
+      <span class="link" id="align-contentspace-evenly"  onclick="set(3,8)">space-evenly</span><br>
+      <div class="label">column-gap :&nbsp;</div>
+      <span class="link" id="column-gap0px"  onclick="set(4,0)">0px</span>
+      <span class="link" id="column-gap10px" onclick="set(4,1)">10px</span>
+      <span class="link" id="column-gap20px" onclick="set(4,2)">20px</span>
+      <span class="link" id="column-gap30px" onclick="set(4,3)">30px</span>
+      <span class="link" id="column-gap40px" onclick="set(4,4)">40px</span>
+      <span class="link" id="column-gap50px" onclick="set(4,5)">50px</span>
+      <span class="link" id="column-gap60px" onclick="set(4,6)">60px</span>
+      <span class="link" id="column-gap70px" onclick="set(4,7)">70px</span>
+      <span class="link" id="column-gap80px" onclick="set(4,8)">80px</span>
+      <span class="link" id="column-gap90px" onclick="set(4,9)">90px</span><br>
+      <div class="label">row-gap :&nbsp;</div>
+      <span class="link" id="row-gap0px"  onclick="set(5,0)">0px</span>
+      <span class="link" id="row-gap10px" onclick="set(5,1)">10px</span>
+      <span class="link" id="row-gap20px" onclick="set(5,2)">20px</span>
+      <span class="link" id="row-gap30px" onclick="set(5,3)">30px</span>
+      <span class="link" id="row-gap40px" onclick="set(5,4)">40px</span>
+      <span class="link" id="row-gap50px" onclick="set(5,5)">50px</span>
+      <span class="link" id="row-gap60px" onclick="set(5,6)">60px</span>
+      <span class="link" id="row-gap70px" onclick="set(5,7)">70px</span>
+      <span class="link" id="row-gap80px" onclick="set(5,8)">80px</span>
+      <span class="link" id="row-gap90px" onclick="set(5,9)">90px</span><br>
+      <div class="label">columns :&nbsp;</div>
+      <span class="link" id="columns1" onclick="set(6,0)">1</span>
+      <span class="link" id="columns2" onclick="set(6,1)">2</span>
+      <span class="link" id="columns3" onclick="set(6,2)">3</span>
+      <span class="link" id="columns4" onclick="set(6,3)">4</span>
+      <span class="link" id="columns5" onclick="set(6,4)">5</span>
+      <span class="link" id="columns6" onclick="set(6,5)">6</span>
+      <span class="link" id="columns7" onclick="set(6,6)">7</span>
+      <span class="link" id="columns8" onclick="set(6,7)">8</span>
+      <span class="link" id="columns9" onclick="set(6,8)">9</span><br>
+      <div class="label">rows :&nbsp;</div>
+      <span class="link" id="rows1" onclick="set(7,0)">1</span>
+      <span class="link" id="rows2" onclick="set(7,1)">2</span>
+      <span class="link" id="rows3" onclick="set(7,2)">3</span>
+      <span class="link" id="rows4" onclick="set(7,3)">4</span>
+      <span class="link" id="rows5" onclick="set(7,4)">5</span>
+      <span class="link" id="rows6" onclick="set(7,5)">6</span>
+      <span class="link" id="rows7" onclick="set(7,6)">7</span>
+      <span class="link" id="rows8" onclick="set(7,7)">8</span>
+      <span class="link" id="rows9" onclick="set(7,8)">9</span><br>
+      <div class="label">grid-area :&nbsp;</div>
+      A <input onchange="ch('Box_A', this)">
+      B <input onchange="ch('Box_B', this)">
+      C <input onchange="ch('Box_C', this)">
+      D <input onchange="ch('Box_D', this)">
+      E <input onchange="ch('Box_E', this)">
+      F <input onchange="ch('Box_F', this)">
+      G <input onchange="ch('Box_G', this)">
+      H <input onchange="ch('Box_H', this)">
+      I <input onchange="ch('Box_I', this)"><br>
+      <div id="outer">
+        <div class="box" id="Box_A">A</div>
+        <div class="box" id="Box_B">B</div>
+        <div class="box" id="Box_C">C</div>
+        <div class="box" id="Box_D">D</div>
+        <div class="box" id="Box_E">E</div>
+        <div class="box" id="Box_F">F</div>
+        <div class="box" id="Box_G">G</div>
+        <div class="box" id="Box_H">H</div>
+        <div class="box" id="Box_I">I</div>
+      </div>
+    </output>
+    <script>
+      settings =  ['grid-auto-flow', 'justify-content', 'align-items',
+                   'align-content',  'column-gap',      'row-gap',
+                   'columns',        'rows'                            ]
+      values   = [['row',            'column',          'dense',
+                   'row dense',      'column dense'                    ],
+                  ['normal',         'start',           'end',
+                   'center',         'left',            'right',
+                   'space-between',  'space-around',    'space-evenly' ],
+                  ['normal',         'start',           'end',
+                   'center',         'stretch',         'baseline',
+                   'self-start',     'self-end'                        ],
+                  ['normal',         'start',           'end',
+                   'center',         'stretch',         'baseline',
+                   'space-between',  'space-around',    'space-evenly' ],
+                  [ '0px',  '10px',  '20px',  '30px',   '40px',
+                   '50px',  '60px',  '70px',  '80px',   '90px'         ],
+                  [ '0px',  '10px',  '20px',  '30px',   '40px',
+                   '50px',  '60px',  '70px',  '80px',   '90px'         ],
+                  ['1',  '2',  '3',  '4',  '5',  '6',   '7',  '8',  '9'],
+                  ['1',  '2',  '3',  '4',  '5',  '6',   '7',  '8',  '9']]
+      counts   = ['auto',
+                  'auto auto',
+                  'auto auto auto',
+                  'auto auto auto auto',
+                  'auto auto auto auto auto',
+                  'auto auto auto auto auto auto',
+                  'auto auto auto auto auto auto auto',
+                  'auto auto auto auto auto auto auto auto',
+                  'auto auto auto auto auto auto auto auto auto'       ]
+
+      function set(j, k)
+      {
+        s = settings[j]
+        v = values[j][k]
+
+        for (x = 0 ; x < values[j].length ; ++x)
+        {
+          style(s + values[j][x], 'font-weight', 'normal')
+          style(s + values[j][x], 'color',       'blue')
+        }
+
+        style(s + v, 'font-weight', 'bold')
+        style(s + v, 'color',       'red')
+
+        if (v > 0) style('outer', 'grid-template-' + s, counts[v - 1])
+        else       style('outer', s, v)
+      }
+
+      function ch(obj1, obj2)
+      {
+        style(obj1, 'grid-area', obj2.value)
+      }
+
+      function id(val)
+      {
+        return document.getElementById(val)
+      }
+
+      function style(obj, prop, val)
+      {
+        id(obj).style[prop] = val
+      }
+    </script>
+  </body>
+</html>

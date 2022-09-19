@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Using the Canvas as an Image</title>
+    <style>
+      #canvas {
+        background-color : cyan;
+        border           : 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id='canvas' width='640' height='320'></canvas>
+    <script>
+      canvas  = document.getElementById('canvas')
+      context = canvas.getContext('2d')
+
+      // Start of example code from the book
+      image     = new Image()
+      image.src = 'smiley.png'
+
+      image.onload = function()
+      {
+        context.drawImage(image, 10,  10)
+        context.drawImage(image, 43, 12, 75, 75, 200, 10, 160, 160)
+        context.drawImage(image, 43, 12, 75, 75, 380, 10, 240, 240)
+
+        context.drawImage(canvas, 10, 10, 620, 300, 10, 200, 270, 130)
+      }
+      // End of example code from the book
+    </script>
+  </body>
+</html>

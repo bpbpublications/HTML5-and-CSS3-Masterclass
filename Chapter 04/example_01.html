@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Mandelbrot</title>
+  </head>
+  <body>
+    <canvas id='canvas'></canvas>
+    <script>
+    canvas        = document.getElementById('canvas')
+    context       = canvas.getContext('2d')
+    w             = 640
+    h             = 480
+    canvas.width  = w
+    canvas.height = h
+
+    z  =  16
+    y  =  0
+    rm = -2
+    rx =  1
+    ix =  1.35
+    im = -ix
+
+    for (i = im ; i <= ix ; i += (ix - im) / h, ++y)
+    {
+      for (x = 0, r = rm ; r <= rx ; r += (rx - rm) / w)
+      {
+        for (x1 = r, y1 = i, j = 0 ; j < z ; ++j)
+        {
+          xsq = x1 * x1; ysq = y1 * y1
+          if (xsq + ysq > 4.0) break
+
+          y1 = 2 * x1 *  y1 + i ; x1 = xsq - ysq + r
+        }
+
+        context.fillStyle =       '#' +
+          ( j      % 16).toString(16) +
+          ((j + 2) % 16).toString(16) +
+          ((j + 7) % 16).toString(16)
+        context.fillRect(x++, y, 1, 1)
+      }
+    }
+    </script>
+  </body>
+</html>

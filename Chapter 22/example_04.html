@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>Element Resizing</title>
+  <style>
+    .box  { border       : 2px solid purple;
+            font         : bold 12pt Arial;
+            margin-right : 10px;
+            width        : 100px;
+            height       : 100px;
+            background   : darkorange;
+            color        : yellow;
+            overflow     : auto;
+            float        : left;       }
+    #box1 { resize       : none;       }
+    #box2 { resize       : horizontal; }
+    #box3 { resize       : vertical;   }
+    #box4 { resize       : both;       }
+    </style>
+  </head>
+	<body>
+    <div class='box' id='box1'>
+      Twas brillig, and the slithy toves did gyre
+      and gimble in the wabe; all mimsy were the
+      borogoves, and the mome raths outgrabe.
+    </div>
+    <div class='box' id='box2'>
+      Twas brillig, and the slithy toves did gyre
+      and gimble in the wabe; all mimsy were the
+      borogoves, and the mome raths outgrabe.
+    </div>
+    <output class='box' id='box3'>
+      Twas brillig, and the slithy toves did gyre
+      and gimble in the wabe; all mimsy were the
+      borogoves, and the mome raths outgrabe.
+    </output>
+    <table>
+      <tr>
+        <td class='box' id='box4'>
+          Twas brillig, and the slithy toves did gyre
+          and gimble in the wabe; all mimsy were the
+          borogoves, and the mome raths outgrabe.
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

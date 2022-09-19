@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Local Storage</title>
+  </head>
+  <body>
+    <script>
+      if (typeof localStorage == 'undefined')
+      {
+        alert('Local storage unavailable.')
+      }
+      else
+      {    
+        localStorage.setItem('username', 'WHouston')
+        localStorage.setItem('password', 'bodyguard1992')
+
+        username  = localStorage.getItem('username')
+        password  = localStorage.getItem('password')
+
+        alert("Data retrieved: username = '" +
+          username + "', password = '" + password + "'.")
+      }
+    </script>
+  </body>
+</html>

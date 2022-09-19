@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Background Clip and Origin</title>
+    <style>
+      .out { border      : 3px solid black;
+             float       : left;
+             margin      : 0 20px 20px 0; }
+      .in  { font        : bold 12px monospace;
+             border      : 4px dotted red;
+             line-height : 1.25;
+             text-align  : center; 
+             width       : 132px;
+             height      : 132px; }
+      .txt { margin-top  : 75% }
+      .box { background  : url('box.jpg') lime top left no-repeat;
+             color       : green;
+             border      : 20px dashed blue;
+             padding     : 20px;
+             width       : 140px;
+             height      : 140px; }
+    </style>
+  </head>
+  <body>
+    <output id='output'></output>
+    <script>
+      attr = ['border-box', 'padding-box', 'content-box']
+
+      for (x = 0 ; x < 3 ; ++x) {
+        for (y = 0 ; y < 3 ; ++y) {
+          document.getElementById('output').innerHTML += `
+            <div class='out'>
+              <div class='box'
+                style='background-clip   : ${attr[x]};
+                       background-origin : ${attr[y]}'>
+                <div class='in'>
+                  <div class='txt'>
+                      clip:${attr[x]}<br>
+                    origin:${attr[y]}
+                  </div>
+                </div>
+              </div>
+            </div>`
+        }
+      }
+    </script>
+  </body>
+</html>

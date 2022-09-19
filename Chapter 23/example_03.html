@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Scaling</title>
+    <style>
+      #box            { position   : absolute;
+                        border     : 5px solid red;
+                        transition : all 1s ease-in-out;
+                        top        : 50px;
+                        left       : 50px;
+                        width      : 100px;
+                        height     : 100px;
+                        background : orange;           }
+      #b:hover ~ #box { transform  : scaleX(1.5     ); }
+      #g:hover ~ #box { transform  : scaleY(1.5     ); }
+      #c:hover ~ #box { transform  : scale( 1.5, 1.5); }
+    </style>
+  </head>
+  <body>
+    <button id='b'>Stretch X</button>
+    <button id='g'>Stretch Y</button>
+    <button id='c'>Stretch Both</button>
+    <div id='box'></div>
+  </body>
+</html>

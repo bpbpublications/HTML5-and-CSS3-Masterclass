@@ -1,0 +1,7 @@
+$heading-size: 28pt;
+
+@for $i from 1 through 5 {
+  h#{$i} {
+    font-size : $heading-size - ($i * 4);
+  }
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Running Webworkers</title>
+  </head>
+  <body>
+    <p>
+      The highest prime number discovered so far is:
+      <output id='result'></output>
+      <p>
+        <button onclick='worker.terminate()'>STOP</button>
+      </p>
+    </p>
+
+    <script>
+      if (!window.Worker)
+      {
+        alert("Web workers not supported")
+      }
+      else
+      {
+        worker = new Worker('worker.js')
+
+        worker.onmessage = function(event)
+        {
+          document.getElementById('result').innerHTML = event.data
+        }
+      }
+   </script>
+  </body>
+</html>

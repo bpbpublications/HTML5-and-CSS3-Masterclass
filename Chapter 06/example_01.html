@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Using script tags 1</title>
+    <style>
+      #canvas {
+        background-color : cyan;
+        border           : 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id='canvas'></canvas>
+    <script>
+      canvas        = document.getElementById('canvas')
+      context       = canvas.getContext('2d')
+      canvas.width  = 640
+      canvas.height = 320
+
+      context.beginPath()
+      context.strokeStyle = 'green'
+      context.rect(20, 20, 600, 280)
+      context.stroke()
+    </script>
+  </body>
+</html>

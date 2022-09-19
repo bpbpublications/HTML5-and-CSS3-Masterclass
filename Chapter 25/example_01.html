@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Flexbox Playground</title>
+    <style>
+      body   { background      : #def; }                         
+      .label { width           : 110px;
+               text-align      : right;
+               float           : left; }
+      .link  { color           : blue;
+               text-decoration : underline;
+               cursor          : pointer; }
+      #outer { display         : flex;
+               border          : 1px solid black;
+               border-radius   : 5px;
+               background      : linear-gradient(cyan,deepskyblue);
+               padding         : 5px;
+               box-sizing      : border-box;
+               width           : 100%;
+               height          : 400px;
+               resize          : both;
+               overflow        : hidden; }
+      .box   { display         : flex;
+               background      : linear-gradient(yellow,red);
+               align-items     : center;
+               justify-content : center;
+               border          : 1px solid black;
+               border-radius   : 5px;
+               font            : bold 20pt Arial;
+               resize          : both;
+               overflow        : auto;
+               color           : white; }
+      #Box_A { width : 100px; height : 100px; }
+      #Box_B { width :  30px; height :  80px; }
+      #Box_C { width : 150px; height : 130px; }
+      #Box_D { width :  50px; height :  50px; }
+      #Box_E { width :  70px; height : 150px; }
+      #Box_F { width : 100px; height :  90px; }
+      #Box_G { width : 160px; height : 180px; }
+      #Box_H { width :  40px; height :  50px; }
+      #Box_I { width : 120px; height : 150px; }
+    </style>
+  </head>
+  <body>
+    <output id='output'></output><br>
+    <div id='outer'>
+      <div class='box' id='Box_A'>A</div>
+      <div class='box' id='Box_B'>B</div>
+      <div class='box' id='Box_C'>C</div>
+      <div class='box' id='Box_D'>D</div>
+      <div class='box' id='Box_E'>E</div>
+      <div class='box' id='Box_F'>F</div>
+      <div class='box' id='Box_G'>G</div>
+      <div class='box' id='Box_H'>H</div>
+      <div class='box' id='Box_I'>I</div>
+    </div>
+    <script>
+      settings = ['flex-direction', 'flex-wrap', 'justify-content',
+                  'align-items', 'align-content', 'gap']
+      values   = [['row', 'row-reverse', 'column',
+                   'column-reverse'],
+                  ['nowrap', 'wrap', 'wrap-reverse'],
+                  ['normal', 'flex-start', 'flex-end', 'start',
+                   'end', 'center', 'left', 'right',
+                   'space-between', 'space-around',
+                   'space-evenly'],
+                  ['normal', 'flex-start', 'flex-end', 'start',
+                   'end', 'center', 'stretch', 'baseline',
+                   'self-start', 'self-end'],
+                  ['normal', 'flex-start', 'flex-end', 'start',
+                   'end', 'center', 'stretch', 'baseline',
+                   'space-between', 'space-around', 'space-evenly'],
+                  ['0px',  '10px', '20px', '30px', '40px',
+                   '50px', '60px', '70px', '80px', '90px']]
+
+      for (j = 0 ; j < settings.length ; ++j) {
+        id('output').innerHTML +=
+          `<div class='label'>${settings[j]} :&nbsp;</div>`
+        for (k = 0 ; k < values[j].length ; ++k) {
+          id('output').innerHTML +=
+            `<span class='link' id='${settings[j]}${values[j][k]}'
+             onclick='set(${j},${k})'>${values[j][k]}</span> `
+        }
+        id('output').innerHTML += '<br>\n'
+      }; console.log(id('output').innerHTML)
+      function set(j, k) {
+        for (x = 0 ; x < values[j].length ; ++x) {
+          style(settings[j] + values[j][x], 'font-weight', 'normal')
+          style(settings[j] + values[j][x], 'color',       'blue')
+        }
+        style(settings[j] + values[j][k], 'font-weight', 'bold')
+        style(settings[j] + values[j][k], 'color',       'red')
+        style('outer', settings[j], values[j][k])
+      }
+      function id(val) { return document.getElementById(val) }
+      function style(obj, prop, val) { id(obj).style[prop] = val }
+    </script>
+  </body>
+</html>

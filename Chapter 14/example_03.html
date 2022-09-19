@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Incorporating Microdata</title>
+  </head>
+  <body>
+    <section itemscope
+      itemtype='http://data-vocabulary.org/Person'>
+      <img itemprop='photo'
+              src  ='elon_musk.jpg'
+              alt  ='Elon Musk'
+              align='left'
+              style='margin-right:10px'>
+
+      <h2 itemprop='name'>Elon Musk</h2>
+
+      <p>
+        Elon Musk is a South African-born American
+        <span itemprop='role'>entrepreneur</span> and
+        <span itemprop='title'>businessman</span>.
+        He likes to call himself the
+        <span itemprop='nickname'>Technoking</span>
+        of Tesla, and his website is:
+        <a itemprop='url'
+          href='https://www.tesla.com/en_GB/elon-musk'>tesla.com</a>.
+      </p>
+
+      <p>Elon's address at SpaceX is:</p>
+
+      <address itemscope itemtype='http://data-vocabulary.org/Address'
+        itemprop='address'>
+        <p>
+          <span itemprop='street-address'>1 Rocket Road</span><br>
+          <span itemprop='locality'      >Hawthorne    </span><br>
+          <span itemprop='region'        >California   </span><br>
+          <span itemprop='postal-code'   >90250        </span><br>
+          <span itemprop='country-name'  >USA          </span>
+        </p>
+      </address>
+    </section>
+  </body>
+</html>

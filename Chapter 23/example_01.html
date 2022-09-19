@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Translation and Transition</title>
+    <style>
+      #box            { position   : absolute;
+                        top        : 50px;
+                        left       : 50px;
+                        width      : 100px;
+                        height     : 100px;
+                        background : orange;
+                        border     : 5px solid red;
+                        transition : all 1s ease-in-out;       }
+      #x:hover ~ #box { transform  : translateX(100px       ); }
+      #y:hover ~ #box { transform  : translateY(100px       ); }
+      #b:hover ~ #box { transform  : translate( 100px, 100px); }
+    </style>
+  </head>
+  <body>
+    <button id='x'>Right</button>
+    <button id='y'>Down </button>
+    <button id='b'>Both </button>
+    <div id='box'></div>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+  <head>
+    <title>Using RGBA</title>
+    <style>
+      #outer { position   : relative; }
+      .box   { position   : absolute;
+               width      : 100%;
+               height     : 200px;    }
+      #box1  { background : yellow;   }
+      #box2  { top        : 100px;
+               background : linear-gradient(to right,
+                 rgba(0, 0, 255, 1), rgba(0, 0, 255, 0) ); }
+    </style>
+  </head>
+  <body>
+    <div id='outer'>
+      <div class='box' id='box1'></div>
+      <div class='box' id='box2'></div>
+    </div>
+  </body>
+</html>

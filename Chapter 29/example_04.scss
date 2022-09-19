@@ -1,0 +1,22 @@
+.messagebox {  
+  border        : 2px dashed #000;
+  border-radius : 10px;
+  background    : #222;
+  padding       : 10px;
+  color         : #ddd;
+}  
+.loggedin {  
+  @extend .messagebox;
+  background    : darkgreen;
+  color         : #dfd;
+}  
+.notloggedin {  
+  @extend .messagebox;
+  background    : dimgrey;
+  color         : #dad;
+}  
+.badlogin {  
+  @extend .messagebox;
+  background    : darkred;
+  color         : #fdd;
+}  

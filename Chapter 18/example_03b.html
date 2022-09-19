@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Clip and Origin (no JavaScript)</title>
+    <style>
+      .out { border      : 3px solid black;
+             float       : left;
+             margin      : 0 20px 20px 0; }
+      .in  { font        : bold 12px monospace;
+             border      : 4px dotted red;
+             line-height : 1.25;
+             text-align  : center; 
+             width       : 132px;
+             height      : 132px; }
+      .txt { margin-top  : 75% }
+      .box { background  : url('box.jpg') lime top left no-repeat;
+             color       : green;
+             border      : 20px dashed blue;
+             padding     : 20px;
+             width       : 140px;
+             height      : 140px; }
+    </style>
+  </head>
+  <body>
+    <div class="out">
+      <div class="box" style="background-clip   : border-box;
+                              background-origin : border-box">
+        <div class="in">
+          <div class="txt">
+              clip:border-box<br>
+            origin:border-box
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="out">
+      <div class="box" style="background-clip   : border-box;
+                              background-origin : padding-box">
+        <div class="in">
+          <div class="txt">
+              clip:border-box<br>
+            origin:padding-box
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="out">
+      <div class="box" style="background-clip   : border-box;
+                              background-origin : content-box">
+        <div class="in">
+          <div class="txt">
+              clip:border-box<br>
+            origin:content-box
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="out">
+      <div class="box" style="background-clip   : padding-box;
+                              background-origin : border-box">
+        <div class="in">
+          <div class="txt">
+              clip:padding-box<br>
+            origin:border-box
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="out">
+      <div class="box" style="background-clip   : padding-box;
+                              background-origin : padding-box">
+        <div class="in">
+          <div class="txt">
+              clip:padding-box<br>
+            origin:padding-box
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="out">
+      <div class="box" style="background-clip   : padding-box;
+                              background-origin : content-box">
+        <div class="in">
+          <div class="txt">
+              clip:padding-box<br>
+            origin:content-box
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="out">
+      <div class="box" style="background-clip   : content-box;
+                              background-origin : border-box">
+        <div class="in">
+          <div class="txt">
+              clip:content-box<br>
+            origin:border-box
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="out">
+      <div class="box" style="background-clip   : content-box;
+                              background-origin : padding-box">
+        <div class="in">
+          <div class="txt">
+              clip:content-box<br>
+            origin:padding-box
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="out">
+      <div class="box" style="background-clip   : content-box;
+                              background-origin : content-box">
+        <div class="in">
+          <div class="txt">
+              clip:content-box<br>
+            origin:content-box
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

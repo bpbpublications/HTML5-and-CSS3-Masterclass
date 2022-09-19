@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Shadowed Text and Lines</title>
+    <style>
+      #canvas {
+        background-color : cyan;
+        border           : 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id='canvas' width='640' height='320'></canvas>
+    <script>
+      canvas  = document.getElementById('canvas')
+      context = canvas.getContext('2d')
+
+      // Start of example code from the book
+      context.shadowOffsetX = 0
+      context.shadowOffsetY = 0
+      context.shadowBlur    = 10
+      context.shadowColor   = '#000'
+      context.strokeStyle   = 'blue'
+      context.lineWidth     = 10
+      context.strokeRect(15, 15, 605, 285)
+      
+      context.fillStyle     = 'red'
+      context.font          = '60pt Arial'
+
+      context.fillText('Shadowed Text', 40, 190)
+      
+      context.shadowOffsetX = -5
+      context.shadowOffsetY = -5
+      context.fillText('Shadowed Text', 40, 100)
+
+
+      context.shadowOffsetX = 5
+      context.shadowOffsetY = 5
+      context.fillText('Shadowed Text', 40, 280)
+      // End of example code from the book
+    </script>
+  </body>
+</html>

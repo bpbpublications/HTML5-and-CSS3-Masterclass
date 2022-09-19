@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Removing The Paths</title>
+    <style>
+      #canvas {
+        background-color : cyan;
+        border           : 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id='canvas' width='640' height='320'></canvas>
+    <script>
+      canvas  = document.getElementById('canvas')
+      context = canvas.getContext('2d')
+
+      // Start of example code from the book
+      //context.beginPath()
+      context.moveTo( 10, 130)
+      context.lineTo( 10, 190)
+      context.lineTo(290, 190)
+      context.lineTo(290, 310)
+      context.lineTo(350, 310)
+      context.lineTo(350, 190)
+      context.lineTo(630, 190)
+      context.lineTo(630, 130)
+      context.lineTo(350, 130)
+      context.lineTo(350,  10)
+      context.lineTo(290,  10)
+      context.lineTo(290, 130)
+      context.lineTo(10,  130)
+      //context.closePath()
+
+      context.stroke()
+      context.fillStyle = 'yellow'
+      context.fill()
+
+      //context.beginPath()
+      context.moveTo(100, 160)
+      context.lineTo(320,  50)
+      context.lineTo(540, 160)
+      context.lineTo(320, 270)
+      context.lineTo(100, 160)
+      //context.closePath()
+
+      context.stroke()
+      context.fillStyle = 'red'
+      context.fill()
+      // End of example code from the book
+    </script>
+  </body>
+</html>

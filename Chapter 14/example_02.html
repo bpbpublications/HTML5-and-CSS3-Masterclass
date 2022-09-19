@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>ClearingLocal Storage</title>
+  </head>
+  <body>
+    <script>
+      if (typeof localStorage == 'undefined')
+      {
+        alert('Local storage unavailable.')
+      }
+      else
+      {    
+        localStorage.removeItem('username')
+        localStorage.removeItem('password')
+
+        username  = localStorage.getItem('username')
+        password  = localStorage.getItem('password')
+
+        alert("Data retrieved: username = '" +
+          username + "', password = '" + password + "'.")
+      }
+    </script>
+  </body>
+</html>

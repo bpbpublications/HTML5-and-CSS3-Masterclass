@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Changing Origin</title>
+    <style>
+      .outer  { perspective      : 200px;
+                width            : 640px;
+                height           : 120px;
+                background       : cyan;
+                transform-style  : preserve-3d;
+                border           : 1px solid black;    }
+      .box    { width            : 100px;
+                height           : 100px;
+                margin           : 0 55px;
+                float            : left;
+                background       : red;
+                border           : 1px solid black;
+                transform        : perspective(200px)
+                                       rotateX(45deg); }
+      .origin { transform-origin : 50% 10%; }
+    </style>
+  </head>
+  <body>
+    <div class='outer'>
+      <div class='box'></div>
+      <div class='box'></div>
+      <div class='box'></div>
+    </div><br>
+    <div class='outer'>
+      <div class='box origin'></div>
+      <div class='box origin'></div>
+      <div class='box origin'></div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HSL Colors</title>
+    <style>
+    	div { height : 1px; }
+    </style>
+  </head>
+  <body>
+    <output id='output'></output>
+    <script>
+      for (j = 0 ; j < 360 ; j += 36) {
+        for (k = 0 ; k < 101 ; k += 10) {
+          document.getElementById('output').innerHTML +=
+          `<div style='background:hsl(${j}, ${k}%, 50%)'></div>\n`
+        }
+      }
+      console.log(document.getElementById('output').innerHTML)
+    </script>
+  </body>
+</html>

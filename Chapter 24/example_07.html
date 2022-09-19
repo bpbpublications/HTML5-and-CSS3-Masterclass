@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cube: No Translation</title>
+    <style>
+      #outer  { perspective        : 500px;
+                width              : 200px;
+                margin             : 10px auto;         }
+      #cube   { transform-style    : preserve-3d;
+                width              : 100%;
+                height             : 200px;              
+                color              : white;
+                text-align         : center;
+                font               : bold 18pt Arial;
+                transition         : all 1s linear;     }
+      .face   { position           : absolute;
+                opacity            : .3;
+                backface-visibility: visible;
+                width              : 100%;
+                height             : 100%;              }
+      #left   { background         : green;
+                transform          : rotateY(  -90deg); }
+      #right  { background         : orange;
+                transform          : rotateY(   90deg); }
+      #up     { background         : red;
+                transform          : rotateX(   90deg); }
+      #down   { background         : magenta;
+                transform          : rotateX(  -90deg); }
+      #back   { background         : indigo;
+                transform          : rotateX( -180deg); }
+      #front  { background         : blue;
+                transform          : rotateX(    0deg); }
+      @keyframes spin
+      {
+        to    { transform          : rotateX(   1turn)
+                                     rotateY(   1turn); }
+      }
+      #l:hover ~ #cube { transform : rotateY(   90deg); }
+      #r:hover ~ #cube { transform : rotateY(  -90deg); }
+      #u:hover ~ #cube { transform : rotateX(  -90deg); }
+      #d:hover ~ #cube { transform : rotateX(   90deg); }
+      #b:hover ~ #cube { transform : rotateX(  180deg); }
+      #s:hover ~ #cube { animation : spin 6s linear 10; }
+    </style>
+  </head>
+  <body'>
+    <div id='outer'>&nbsp;
+      <button id='l'> L  </button>
+      <button id='r'> R  </button>
+      <button id='u'> U  </button>
+      <button id='d'> D  </button>
+      <button id='b'> B  </button>
+      <button id='s'>Spin</button>
+      <br><br><br><br>
+      <div id='cube'>
+        <div class='face' id='left'> <br><br><br>LEFT </div>
+        <div class='face' id='right'><br><br><br>RIGHT</div>
+        <div class='face' id='up'>   <br><br><br>UP   </div>
+        <div class='face' id='down'> <br><br><br>DOWN </div>
+        <div class='face' id='back'> <br><br><br>BACK </div>
+        <div class='face' id='front'><br><br><br>FRONT</div>
+      </div>
+    </div>
+  </body>
+</html>

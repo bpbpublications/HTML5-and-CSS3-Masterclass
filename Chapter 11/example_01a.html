@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Compositing with Transparency</title>
+  </head>
+  <body>
+    <script>
+      image     = new Image()
+      image.src = 'globe.png'
+      types     = ['source-over',      'source-in',
+                   'source-out',       'source-atop',
+                   'destination-over', 'destination-in',
+                   'destination-out',  'destination-atop',
+                   'lighter',          'darker',
+                   'copy',             'xor']
+
+      image.onload = function()
+      {
+        for (j = 0 ; j < 12 ; ++j)
+        {
+          canvas                  = document.createElement('canvas')
+          canvas.width            = 120
+          canvas.height           = 120
+          canvas.style.background = '#ddd'
+          canvas.style.margin     = '5px'
+          context                 = canvas.getContext('2d')
+          context.globalAlpha     = 0.5
+          context.arc(50, 50, 50, 0, Math.PI * 2)
+          context.fillStyle = 'orange'
+          context.fill()
+
+          context.globalCompositeOperation = types[j]
+          context.drawImage(image, 20, 20, 100, 100)
+          document.body.appendChild(canvas)
+        }
+      }
+    </script>
+  </body>
+</html>

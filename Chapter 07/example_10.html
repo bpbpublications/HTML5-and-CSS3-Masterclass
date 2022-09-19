@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Gradients and Patterns 3</title>
+    <style>
+      #canvas {
+        background-color : cyan;
+        border           : 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id='canvas' width='640' height='320'></canvas>
+    <script>
+      canvas  = document.getElementById('canvas')
+      context = canvas.getContext('2d')
+
+      // Start of example code from the book
+      color1 = 'yellow'
+      color2 = 'green'
+      color3 = 'red'
+      color4 = 'violet'
+      color5 = 'blue'
+
+      gradient = context.createLinearGradient(55, 10, 55, 160)
+      gradient.addColorStop(0.0, color1)
+      gradient.addColorStop(0.2, color2)
+      gradient.addColorStop(0.5, color3)
+      gradient.addColorStop(0.8, color4)
+      gradient.addColorStop(1.0, color5)
+      context.fillStyle = gradient
+      context.fillRect(10, 10, 90, 150)
+
+      gradient = context.createLinearGradient(110, 85, 200, 85)
+      gradient.addColorStop(0.0, color1)
+      gradient.addColorStop(0.2, color3)
+      gradient.addColorStop(0.5, color5)
+      gradient.addColorStop(0.8, color2)
+      gradient.addColorStop(1.0, color4)
+      context.fillStyle = gradient
+      context.fillRect(110, 10, 90, 150)
+
+      gradient = context.createLinearGradient(210, 10, 300, 160)
+      gradient.addColorStop(0.0, color3)
+      gradient.addColorStop(0.2, color4)
+      gradient.addColorStop(0.5, color1)
+      gradient.addColorStop(0.8, color5)
+      gradient.addColorStop(1.0, color2)
+      context.fillStyle = gradient
+      context.fillRect(210, 10, 90, 150)
+
+      gradient = context.createRadialGradient(355, 85, 0, 355, 85, 100)
+      gradient.addColorStop(0.0, color4)
+      gradient.addColorStop(0.2, color2)
+      gradient.addColorStop(0.5, color1)
+      gradient.addColorStop(0.8, color5)
+      gradient.addColorStop(1.0, color3)
+      context.fillStyle = gradient
+      context.fillRect(310, 10, 90, 150)
+
+      image     = new Image()
+      image.src = 'tile.png'
+
+      image.onload = function()
+      {
+        pattern = context.createPattern(image, 'repeat')
+        context.fillStyle = pattern
+        context.fillRect(410, 10, 220, 300)
+
+        pattern = context.createPattern(image, 'repeat-y')
+        context.fillStyle = pattern
+        context.fillRect(10, 170, 190, 140)
+
+        context.save()
+        context.translate(210, 170)
+        pattern = context.createPattern(image, 'repeat-x')
+        context.fillStyle = pattern
+        context.fillRect(0, 0, 190, 140)
+        context.restore()
+      }
+      // End of example code from the book
+    </script>
+  </body>
+</html>

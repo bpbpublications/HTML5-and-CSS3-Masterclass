@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Element Overflow</title>
+    <style>
+      .box       { float        : left;
+                   background   : yellow;
+                   margin-right : 60px;
+                   font-size    : 20px;
+                   border       : 1px solid #000;
+                   width        : 100px;
+                   height       : 100px;   }
+      .visible-x { overflow-x   : visible; }
+      .hidden-x  { overflow-x   : hidden;  }
+      .scroll-x  { overflow-x   : scroll;  }
+      .auto-x    { overflow-x   : auto;    }
+      .visible-y { overflow-y   : visible; }
+      .hidden-y  { overflow-y   : hidden;  }
+      .scroll-y  { overflow-y   : scroll;  }
+      .auto-y    { overflow-y   : auto;    }
+    </style>
+  </head>
+  <body>
+    <div class='box visible-x visible-y'>
+      ExtraWideWord The quick brown fox jumps over
+      the lazy sleeping dog</div>
+    <div class='box hidden-x visible-y'>
+      ExtraWideWord The quick brown fox jumps over
+      the lazy sleeping dog</div>
+    <div class='box visible-x hidden-y'>
+      ExtraWideWord The quick brown fox jumps over
+      the lazy sleeping dog</div>
+    <div class='box auto-x auto-y'>
+      ExtraWideWord The quick brown fox jumps over
+      the lazy sleeping dog</div>
+  </body>
+</html>

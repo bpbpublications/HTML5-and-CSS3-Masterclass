@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Drop Down Lists</title>
+  </head>
+  <body>
+    <form method='post'>
+      Select your favorite <input type='url' name='site' list='links'>
+      <input type='submit'>
+    </form>
+
+    <datalist id='links'>
+      <option label='Google' value='http://google.com'>
+      <option label='Yahoo!' value='http://yahoo.com' >
+      <option label='Bing'   value='http://bing.com'  >
+      <option label='Ask'    value='http://ask.com'   >
+    </datalist>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Box Shadows</title>
+    <style>
+      .boxa    { width      : 120px;
+                 height     : 100px;                     }
+      .boxb    { width      : 280px;
+                 height     : 100px;                     }
+      .all     { background : cyan;
+                 float      : left;
+                 margin     : 10px;
+                 border     : 10px solid red;            }
+      .shadow1 { box-shadow : -6px -6px 10px #888;       }
+      .shadow2 { box-shadow :  6px -6px 10px #888;       }
+      .shadow3 { box-shadow : -6px  6px 10px #888;       }
+      .shadow4 { box-shadow :  6px  6px 10px #888;       }
+      .shadow5 { box-shadow : -6px -6px 10px #888 inset; }
+      .shadow6 { box-shadow :  6px -6px 10px #888 inset; }
+      .shadow7 { box-shadow : -6px  6px 10px #888 inset; }
+      .shadow8 { box-shadow :  6px  6px 10px #888 inset; }
+      .shadow9 { box-shadow :  0px  0px 20px #000;       }
+      .shadowa { box-shadow :  0px  0px 20px #000 inset; }
+    </style>
+  </head>
+  <body>
+    <div class='boxa all shadow1'></div>
+    <div class='boxa all shadow2'></div>
+    <div class='boxa all shadow3'></div>
+    <div class='boxa all shadow4'></div>
+    <div class='boxa all shadow5'></div>
+    <div class='boxa all shadow6'></div>
+    <div class='boxa all shadow7'></div>
+    <div class='boxa all shadow8'></div>
+    <div class='boxb all shadow9'></div>
+    <div class='boxb all shadowa'></div>
+  </body>
+</html>

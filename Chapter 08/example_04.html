@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Text Base Line</title>
+    <style>
+      #canvas {
+        background-color : cyan;
+        border           : 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id='canvas' width='640' height='320'></canvas>
+    <script>
+      canvas  = document.getElementById('canvas')
+      context = canvas.getContext('2d')
+
+      // Start of example code from the book
+      context.strokeStyle = "blue"
+      context.moveTo(0,   160)
+      context.lineTo(640, 160)
+      context.stroke()
+      context.strokeStyle = "red"
+      context.lineWidth   = 2
+      context.font        = '26pt Helvetica'
+ 
+      context.textBaseline = 'top'
+      context.strokeText('Top', 20, 160)
+
+      context.textBaseline = 'middle'
+      context.strokeText('Middle', 150, 160)
+
+      context.textBaseline = 'bottom'
+      context.strokeText('Bottom', 300, 160)
+
+      context.textBaseline = 'alphabetic'
+      context.strokeText('Alphabetic', 450, 160)
+      // End of example code from the book
+    </script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Drawing Counter-clockwise Arcs</title>
+    <style>
+      #canvas {
+        background-color : cyan;
+        border           : 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id='canvas' width='640' height='320'></canvas>
+    <script>
+      canvas  = document.getElementById('canvas')
+      context = canvas.getContext('2d')
+
+      // Start of example code from the book
+      context.beginPath()
+      context.arc(128, 160, 60, 0, Math.PI / 2,     true)
+      context.stroke()
+
+      context.beginPath()
+      context.arc(256, 160, 60, 0, Math.PI,         true)
+      context.stroke()
+
+      context.beginPath()
+      context.arc(384, 160, 60, 0, Math.PI / 2 * 3, true)
+      context.stroke()
+
+      context.beginPath()
+      context.arc(512, 160, 60, 0, Math.PI * 2,     true)
+      context.stroke()
+      // End of example code from the book
+    </script>
+  </body>
+</html>

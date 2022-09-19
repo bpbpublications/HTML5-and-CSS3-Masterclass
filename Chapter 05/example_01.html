@@ -1,0 +1,28 @@
+<!DOCTYPE html>  
+<html lang="en">  
+  <head>  
+    <meta charset="utf-8" />  
+    <title>Gradient Example</title>  
+  </head>
+  <body>
+  <canvas id='canvas'></canvas>
+    <script>
+      canvas        = document.getElementById('canvas')
+      context       = canvas.getContext('2d')
+      w             = 640
+      h             = 320
+      canvas.width  = w
+      canvas.height = h
+      gradient      = context.createLinearGradient(0, 0, w, 0)
+   
+      gradient.addColorStop("0",   "magenta")
+      gradient.addColorStop(".25", "blue")
+      gradient.addColorStop(".50", "green")
+      gradient.addColorStop(".75", "yellow")
+      gradient.addColorStop("1.0", "red")
+   
+      context.fillStyle = gradient;  
+      context.fillRect(0,0,640,320)
+    </script>  
+  </body>  
+</html> 

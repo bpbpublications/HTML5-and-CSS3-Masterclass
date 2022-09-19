@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Capping and Joining Lines</title>
+    <style>
+      #canvas {
+        background-color : cyan;
+        border           : 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id='canvas' width='640' height='320'></canvas>
+    <script>
+      canvas  = document.getElementById('canvas')
+      context = canvas.getContext('2d')
+
+      // Start of example code from the book
+      context.strokeStyle = 'red'
+      context.beginPath()
+      context.moveTo(30,   70)
+      context.lineTo(610,  70)
+      context.moveTo(30,  250)
+      context.lineTo(610, 250)
+      context.stroke()
+
+      context.beginPath()
+      context.lineWidth   = 20
+      context.strokeStyle = 'blue'
+
+      context.beginPath()
+      context.lineCap = 'round'
+      context.moveTo( 91, 250)
+      context.lineTo( 91,  70)
+      context.stroke()
+      
+      context.beginPath()
+      context.lineCap = 'butt'
+      context.moveTo(183, 250)
+      context.lineTo(183,  70)
+      context.stroke()
+      
+      context.beginPath()
+      context.lineCap = 'square'
+      context.moveTo(274, 250)
+      context.lineTo(274,  70)
+      context.stroke()
+
+      context.beginPath()
+      context.lineCap  = 'round'
+      context.lineJoin = 'round'
+      context.moveTo(335, 250)
+      context.lineTo(365,  70)
+      context.lineTo(395, 250)
+      context.stroke()
+      
+      context.beginPath()
+      context.lineCap  = 'butt'
+      context.lineJoin = 'bevel'
+      context.moveTo(427, 250)
+      context.lineTo(457,  70)
+      context.lineTo(487, 250)
+      context.stroke()
+      
+      context.beginPath()
+      context.lineCap  = 'square'
+      context.lineJoin = 'miter'
+      context.moveTo(518, 250)
+      context.lineTo(548,  70)
+      context.lineTo(578, 250)
+      context.stroke()
+      // End of example code from the book
+    </script>
+  </body>
+</html>

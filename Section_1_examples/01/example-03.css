@@ -1,0 +1,12 @@
+body {
+  font-size   : 14pt;
+  font-family : serif;
+}
+h1 {
+  font-size   : 24pt;
+  font-weight : bold;
+}
+.note {
+  font-style  : italic;
+  font-family : sans-serif;
+}

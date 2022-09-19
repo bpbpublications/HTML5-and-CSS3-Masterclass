@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Scaling, Translation and Rotation</title>
+    <style>
+      #canvas {
+        background-color : cyan;
+        border           : 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id='canvas' width='640' height='320'></canvas>
+    <script>
+      canvas  = document.getElementById('canvas')
+      context = canvas.getContext('2d')
+
+      // Start of example code from the book
+      colors = ['red',  'orange', 'yellow', 'green',
+                'blue', 'indigo', 'violet']
+
+      for (j = 0 ; j < 7 ; ++j)
+      {
+        context.save()
+        context.beginPath()
+        context.translate(j * 40, 0)
+        context.scale(1 + j, 1 + j)
+        context.rotate(j / 7)
+        context.moveTo( 0, 40)
+        context.lineTo(40,  0)
+        context.lineTo(80, 40)
+        context.lineTo(40, 80)
+        context.lineTo( 0, 40)
+        context.fillStyle = colors[j]
+        context.fill()
+        context.restore()
+      }
+      // End of example code from the book
+    </script>
+  </body>
+</html>

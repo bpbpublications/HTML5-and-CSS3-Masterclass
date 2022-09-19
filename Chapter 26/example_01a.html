@@ -1,0 +1,131 @@
+<!DOCTYPE html> <!-- Extended Whitespace -->
+<html>
+  <head>
+    <title>CSS Grid Playground</title>
+    <style>
+      body   { background      : #def; }  
+      input  { width           : 33px;
+               position        : relative;
+               top             : -2px;
+               margin          : 0 0 5px;
+               font            : 6pt monospace; }
+      .label { width           : 110px;
+               text-align      : right;
+               float           : left; }
+      .link  { color           : blue;
+               text-decoration : underline;
+               cursor          : pointer; }
+      #outer { display         : grid;
+               border          : 1px solid black;
+               border-radius   : 5px;
+               background      : linear-gradient(cyan,deepskyblue);
+               padding         : 5px;
+               box-sizing      : border-box;
+               width           : 100%;
+               height          : 350px;
+               resize          : both;
+               overflow        : hidden; }
+      .box   { display         : flex;
+               background      : linear-gradient(yellow,red);
+               align-items     : center;
+               justify-content : center;
+               width           : 100%;
+               height          : 100%;
+               border          : 1px solid black;
+               border-radius   : 5px;
+               font            : bold 20pt Arial;
+               resize          : both;
+               overflow        : auto;
+               color           : white; }
+    </style>
+  </head>
+  <body>
+    <output id='output'></output>
+    <script>
+      settings =  ['grid-auto-flow', 'justify-content', 'align-items',
+                   'align-content',  'column-gap',      'row-gap',
+                   'columns',        'rows'                            ]
+      values   = [['row',            'column',          'dense',
+                   'row dense',      'column dense'                    ],
+                  ['normal',         'start',           'end',
+                   'center',         'left',            'right',
+                   'space-between',  'space-around',    'space-evenly' ],
+                  ['normal',         'start',           'end',
+                   'center',         'stretch',         'baseline',
+                   'self-start',     'self-end'                        ],
+                  ['normal',         'start',           'end',
+                   'center',         'stretch',         'baseline',
+                   'space-between',  'space-around',    'space-evenly' ],
+                  [ '0px',  '10px',  '20px',  '30px',   '40px',
+                   '50px',  '60px',  '70px',  '80px',   '90px'         ],
+                  [ '0px',  '10px',  '20px',  '30px',   '40px',
+                   '50px',  '60px',  '70px',  '80px',   '90px'         ],
+                  ['1',  '2',  '3',  '4',  '5',  '6',   '7',  '8',  '9'],
+                  ['1',  '2',  '3',  '4',  '5',  '6',   '7',  '8',  '9']]
+      counts   = []
+      out1     = ''
+      out2     = "<br><div id='outer'>\n"
+
+      for (j = 0 ; j < settings.length ; ++j)
+      {
+        s     = settings[j]
+        out1 += `<div class='label'>${s} :&nbsp;</div>\n`
+        
+        for (k = 0 ; k < values[j].length ; ++k)
+        {
+          v     = values[j][k]
+          out1 += `<span class='link' id='${s}${v}' ` +
+                  `onclick='set(${j},${k})'>${v}</span>\n`
+        }
+
+        out1 += '<br>'
+      }
+
+      out1 += "<div class='label'>grid-area :&nbsp;</div>\n"
+
+      for ( j = 0 ; j < 9 ; ++j)
+      {
+        l         = String.fromCharCode(65 + j)
+        counts[j] = 'auto '.repeat(j + 1)
+        out1     += l + ` <input onchange="ch('Box_${l}', this)">\n`
+        out2     +=     `<div class='box' id='Box_${l}'>${l}</div>\n`
+      }
+
+      id('output').innerHTML = out1 + out2 + '</div>'
+      console.log(id('output').innerHTML)
+
+      function set(j, k)
+      {
+        s = settings[j];
+        v = values[j][k]
+
+        for (x = 0 ; x < values[j].length ; ++x)
+        {
+          style(s + values[j][x], 'font-weight', 'normal')
+          style(s + values[j][x], 'color',       'blue')
+        }
+
+        style(s + v, 'font-weight', 'bold')
+        style(s + v, 'color',       'red')
+
+        if (v > 0) style('outer', 'grid-template-' + s, counts[v - 1])
+        else       style('outer', s, v)
+      }
+
+      function ch(obj1, obj2)
+      {
+        style(obj1, 'grid-area', obj2.value)
+      }
+
+      function id(val)
+      {
+        return document.getElementById(val)
+      }
+
+      function style(obj, prop, val)
+      {
+        id(obj).style[prop] = val
+      }
+    </script>
+  </body>
+</html>

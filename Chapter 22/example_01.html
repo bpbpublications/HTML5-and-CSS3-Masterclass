@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Box sizing</title>
+    <style>
+      .box  { font            : bold 14pt serif;
+              border          : 10px solid red;
+              width           : 200px;
+              height          : 100px;
+              padding         : 20px;
+              margin-right    : 20px;
+              float           : left;
+              display         : flex;
+              justify-content : center;
+              align-items     : center;
+              text-align      : center;
+              color           : blue;
+              background      : lime;
+              background-clip : content-box; }
+      #box1 { box-sizing      : content-box; }
+      #box2 { box-sizing      : border-box;  }
+    </style>
+  </head>
+  <body>
+    <div class='box' id='box1'>Living in a box</div>
+    <div class='box' id='box2'>Living in a box</div>
+  </body>
+</html>

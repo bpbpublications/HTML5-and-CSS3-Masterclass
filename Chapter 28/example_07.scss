@@ -1,0 +1,9 @@
+$margin  : 10px;
+$padding : 10px;
+
+@if ($margin == 10px) and ($padding >= 10px) {
+  border-color : green;
+}
+@else {
+  border-color : black;
+}

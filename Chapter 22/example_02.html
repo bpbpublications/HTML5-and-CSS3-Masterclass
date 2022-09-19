@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Text Overflow</title>
+    <style>
+      .box  { font          : bold 16pt serif;
+              border        : 2px solid blue;
+              width         : 640px;
+              padding       : 5px;
+              margin        : 5px 0;
+              float         : left;
+              color         : yellow;
+              background    : olive;
+              white-space   : nowrap;
+              overflow      : hidden;   }
+      #box1 { text-overflow : clip;     }
+      #box2 { text-overflow : ellipsis; }
+    </style>
+  </head>
+  <body>
+    <div class='box' id='box1'>Straw, no too stupid a fad,
+      I put soot on warts - now read that backwards.</div>
+    <div class='box' id='box2'>Straw, no too stupid a fad,
+      I put soot on warts - now read that backwards.</div>
+  </body>
+</html>

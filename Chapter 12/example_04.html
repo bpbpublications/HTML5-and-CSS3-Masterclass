@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Requesting Location</title>
+  </head>
+  <body>
+    <script>
+      // Start of example code from the book
+      if (typeof navigator.geolocation == 'undefined')
+      {
+        console.log('No geolocation')
+        window.location = 'no_geo.html'
+      }
+      else
+      {
+        navigator.geolocation.getCurrentPosition(granted, denied)
+
+        function denied(error)
+        {
+          switch(error.code)
+          {
+            case 1: message = 'Permission Denied'; break
+            case 2: message = 'Position Unavailable'; break
+            case 3: message = 'Operation Timed Out'; break
+            case 4: message = 'Unknown Error'
+          }
+
+          console.log("Error with geolocation: " + message)
+          window.location = 'no_geo.html'
+        }
+
+        function granted(position)
+        {
+          console.log('Geolocation granted')
+
+          lat = position.coords.latitude
+          lon = position.coords.longitude
+          map = "https://www.google.com/maps/@"
+ 
+          window.location = map + lat + "," + lon + ",8z"
+        }
+      }
+      // End of example code from the book
+    </script>
+  </body>
+</html>

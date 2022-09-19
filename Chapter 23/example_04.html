@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rotation</title>
+    <style>
+      #box            { position   : absolute;
+                        border     : 5px solid red;
+                        transition : all 1s ease-in-out;
+                        text-align : center;
+                        color      : blue;
+                        font       : bold 16pt Arial;
+                        top        : 50px;
+                        left       : 50px;
+                        width      : 100px;
+                        height     : 100px;
+                        background : orange;          }
+      #b:hover ~ #box { transform  : rotate(  90deg); }
+      #g:hover ~ #box { transform  : rotate(-180deg); }
+      #c:hover ~ #box { transform  : rotate(1080deg); }
+    </style>
+  </head>
+  <body>
+    <button id='b'>Clockwise 90</button>
+    <button id='g'>Reverse 180 </button>
+    <button id='c'>Three loops </button>
+    <div id='box'>I'm Spinning Around</div>
+  </body>
+</html>

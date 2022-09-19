@@ -1,0 +1,8 @@
+$heading-size : 24pt;
+
+@for $i from 5 to 0 {
+  h#{$i} {
+    font-size     : $heading-size;
+    $heading-size : $heading-size - 4pt;
+  }
+}

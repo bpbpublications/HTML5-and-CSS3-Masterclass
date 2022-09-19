@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Text Line Widths</title>
+    <style>
+      #canvas {
+        background-color : cyan;
+        border           : 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id='canvas' width='640' height='320'></canvas>
+    <script>
+      canvas  = document.getElementById('canvas')
+      context = canvas.getContext('2d')
+
+      // Start of example code from the book
+      output = 'To be, or not to be...'
+
+      context.lineWidth = 2
+      context.font      = '3em Helvetica'
+      context.textAlign = 'right'
+      context.strokeText(output, 630,  50)
+
+      context.lineWidth = .5
+      context.textAlign = 'left'
+      context.font      = '16px Impact'
+      context.strokeText(output, 10, 100)
+
+      context.lineWidth = .8
+      context.textAlign = 'center'
+      context.font      = '150% Courier'
+      context.strokeText(output, 320, 150)
+
+      context.lineWidth = .25
+      context.textAlign = 'start'
+      context.font      = '10mm Times'
+      context.strokeText(output, 10, 210)
+
+      context.lineWidth = 7
+      context.textAlign = 'end'
+      context.font      = '50pt Arial'
+      context.strokeText(output, 630, 300)
+      // End of example code from the book
+    </script>
+  </body>
+</html>

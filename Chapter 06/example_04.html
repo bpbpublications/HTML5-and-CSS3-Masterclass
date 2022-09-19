@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Converting to an Image</title>
+    <style>
+      #canvas {
+        background-color : yellow;
+        border           : 1px solid red;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id='canvas' width='320' height='320'></canvas>
+    <img id='image'>
+    <script>
+      canvas  = document.getElementById('canvas')
+      context = canvas.getContext('2d')
+
+      context.beginPath()
+      context.arc(160, 160, 150, 0, 2 * Math.PI)
+      context.fillStyle   = 'green'
+      context.strokeStyle = 'blue'
+      context.fill()
+      context.stroke()
+      document.getElementById('image').src = canvas.toDataURL()
+    </script>
+  </body>
+</html>

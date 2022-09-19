@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>JavaScript and Full Screen</title>
+  </head>
+  <body>
+    <video id='bunny' width='320' height='240'>
+      <source src='bunny.mp4' type='video/mp4'>
+    </video>
+
+    <p>
+      <button onclick='playvideo()'>Play Video</button>
+      <button onclick='pausevideo()'>Pause Video</button>
+      <button onclick='fullvideo()'>Full Screen</button>
+    </p>
+ 
+    <script>
+      function playvideo()
+      {
+        document.getElementById('bunny').play()
+      }
+
+      function pausevideo()
+      {
+        document.getElementById('bunny').pause()
+      }
+
+      function fullvideo()
+      {
+        document.getElementById('bunny').requestFullscreen()
+      }
+    </script>
+  </body>
+</html>

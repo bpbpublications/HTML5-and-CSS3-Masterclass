@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+  <head>
+    <title>An HSL Color Wheel</title>
+    <style>
+      #outer  { position      : relative;
+                width         : 400px;
+                margin        : auto;            }
+      .wheel  { position      : absolute;
+                width         : 400px;
+                height        : 400px;
+                border-radius : 50%;             }
+      #wheel1 { background    : conic-gradient(
+                  red,  yellow,  lime, aqua,
+                  blue, magenta, red);           }
+      #wheel2 { background    : radial-gradient(
+                  rgba(255, 255, 255, 1),
+                  rgba(255, 255, 255, 0));       }
+    </style>
+  </head>
+  <body>
+    <div id='outer'>
+      <div class='wheel' id='wheel1'></div>
+      <div class='wheel' id='wheel2'></div>
+    </div>
+  </body>
+</html>

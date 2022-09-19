@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Matrix Transformations</title>
+    <style>
+      #box            { position   : absolute;
+                        border     : 5px solid red;
+                        transition : all 1s ease-in-out;
+                        top        : 50px;
+                        left       : 50px;
+                        width      : 100px;
+                        height     : 100px;
+                        background : orange;                     }
+      #a:hover ~ #box { transform  : matrix(2, 0, 0, 1,  0,  0); }
+      #b:hover ~ #box { transform  : matrix(1, 1, 0, 1,  0,  0); }
+      #c:hover ~ #box { transform  : matrix(1, 0, 1, 1,  0,  0); }
+      #d:hover ~ #box { transform  : matrix(1, 0, 0, 2,  0,  0); }
+      #x:hover ~ #box { transform  : matrix(1, 0, 0, 1, 50,  0); }
+      #y:hover ~ #box { transform  : matrix(1, 0, 0, 1,  0, 50); }
+    </style>
+  </head>
+  <body>
+    <button id='a'>A</button>
+    <button id='b'>B</button>
+    <button id='c'>C</button>
+    <button id='d'>D</button>
+    <button id='x'>X</button>
+    <button id='y'>Y</button>
+    <div id='box'></div>
+  </body>
+</html>

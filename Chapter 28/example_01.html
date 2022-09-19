@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CSS Variables</title>
+    <style>
+      :root {
+        --default-width  : 100px;
+        --default-height :  80px;                              }
+      #div1 {
+        width            : var(--default-width );
+        height           : var(--default-height);              }
+      #div2 {
+        width            : calc(var(--default-width ) + 20px);
+        height           : calc(var(--default-height) + 20px); }
+      div {
+        background-color : lime;
+        float            : left;
+        margin           : 10px;
+        border           : 1px solid black;                    }
+    </style>
+  </head>
+  <body>
+    <div id='div1'>This is div1</div>
+    <div id='div2'>This is div2</div>
+  </body>
+</html>

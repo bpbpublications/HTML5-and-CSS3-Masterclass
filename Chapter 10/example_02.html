@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Resizing an Image</title>
+    <style>
+      #canvas {
+        background-color : cyan;
+        border           : 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id='canvas' width='640' height='320'></canvas>
+    <script>
+      canvas  = document.getElementById('canvas')
+      context = canvas.getContext('2d')
+
+      // Start of example code from the book
+      image     = new Image()
+      image.src = 'smiley.png'
+
+      image.onload = function()
+      {
+        context.drawImage(image, 10,  10)
+        context.drawImage(image, 200, 10, 240, 240)
+        context.drawImage(image, 460, 10,  80,  80)
+        context.drawImage(image, 560, 10,  40,  40)
+      }
+      // End of example code from the book
+    </script>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+$global-bg   : #000;
+
+.content {
+  $local-fs  : italic;
+  background : $global-bg;
+  font-style : $local-fs;
+}
+
+.sidebar {
+  background : $global-bg;
+  font-style : $local-fs;
+}

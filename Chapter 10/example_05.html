@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Attaching Shadows</title>
+    <style>
+      #canvas {
+        background-color : cyan;
+        border           : 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id='canvas' width='640' height='320'></canvas>
+    <script>
+      canvas  = document.getElementById('canvas')
+      context = canvas.getContext('2d')
+
+      // Start of example code from the book
+      image     = new Image()
+      image.src = 'smiley.png'
+
+      image.onload = function()
+      {
+        context.shadowOffsetX = 4
+        context.shadowOffsetY = 4
+        context.shadowBlur    = 4
+        context.shadowColor   = '#000'
+        context.drawImage(image, 10, 10, 140, 140)
+
+        context.shadowOffsetX = 6
+        context.shadowOffsetY = 6
+        context.shadowBlur    = 6
+        context.shadowColor   = '#220'
+        context.drawImage(image, 160, 10, 140, 140)
+
+        context.shadowOffsetX = 8
+        context.shadowOffsetY = 8
+        context.shadowBlur    = 8
+        context.shadowColor   = '#440'
+        context.drawImage(image, 310, 10, 140, 140)
+
+        context.shadowOffsetX = 10
+        context.shadowOffsetY = 10
+        context.shadowBlur    = 10
+        context.shadowColor   = '#660'
+        context.drawImage(image, 460, 10, 140, 140)
+      }
+      // End of example code from the book
+    </script>
+  </body>
+</html>

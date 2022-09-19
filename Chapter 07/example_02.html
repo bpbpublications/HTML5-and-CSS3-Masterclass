@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Using Variables</title>
+    <style>
+      #canvas {
+        background-color : cyan;
+        border           : 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id='canvas' width='640' height='320'></canvas>
+    <script>
+      canvas  = document.getElementById('canvas')
+      context = canvas.getContext('2d')
+
+      // Start of example code from the book
+      r_left   = 10
+      r_top    = 20
+      r_width  = 400
+      r_height = 200
+	    
+      context.beginPath()
+      context.strokeRect(r_left, r_top, r_width, r_height)
+      context.stroke()
+      // End of example code from the book
+    </script>
+  </body>
+</html>

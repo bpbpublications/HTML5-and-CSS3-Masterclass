@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Playing Audio with JavaScript</title>
+  </head>
+  <body>
+    <audio id='music'>
+      <source src='music.mp3' type='audio/mpeg'>
+    </audio>
+
+    <p>
+      <button onclick='playaudio()'>Play Audio</button>
+      <button onclick='pauseaudio()'>Pause Audio</button>
+    </p>
+
+    <script>
+      function playaudio()
+      {
+        document.getElementById('music').play()
+      }
+      function pauseaudio()
+      {
+        document.getElementById('music').pause()
+      }
+    </script>
+  </body>
+</html>

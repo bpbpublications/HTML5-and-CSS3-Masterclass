@@ -1,0 +1,11 @@
+$margin : 10px;
+
+@if $margin == 10px  {
+  border-color : green;
+}
+@else if $margin == 15px {
+  border-color : blue;
+}
+@else {
+  border-color : black;
+}

@@ -1,0 +1,8 @@
+$bord-rad : false;
+
+@if $bord-rad {
+  border-radius : 10px;
+}
+@else {
+  border-radius : 0;
+}

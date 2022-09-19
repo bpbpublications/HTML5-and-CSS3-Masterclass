@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Case Insensitive Global Selector</title>
+    <style>
+      body { font : 16pt Arial; }
+      a[href *= 'PDF' I] {
+        background   : url('pdf-icon.png') no-repeat;
+        padding-left : 16px; }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li><a href='https://google.com'  >Google</a></li>
+      <li><a href='/home/pdfs/'         >Documents</a></li>
+      <li><a href='https://facebook.com'>Facebook</a></li>
+      <li><a href='/home/'              >Home Page</a></li>
+    </ul>
+  </body>
+</html>
